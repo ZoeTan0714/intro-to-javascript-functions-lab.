@@ -183,7 +183,8 @@ Complete the exercise in the space below:
 */
 
 const calculateTip = (billAmount, tipPercentage) => {
-    return billAmount * tipPercentage / 100;
+    let tipP = tipPercentage / 100; 
+    return billAmount * tipP;
 }
 console.log('Exercise 7 Result:', calculateTip(50, 20));
 
