@@ -202,12 +202,101 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 
 Complete the exercise in the space below:
 */
-
-
-
+const convertTemperature = (temp, input) => {
+    return input === 'F' ? Math.floor(temp*33.8) : Math.floor(temp/33.8);
+}
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
+/*
+Exercise 9: basicCalculator()
 
+Create a function named basicCalculator. 
+It should take three arguments: two numbers and a string representing 
+an operation ('add', 'subtract', 'multiply', 'divide'). 
+Perform the provided operation on the two numbers. 
+In operations where the order of numbers is important, 
+treat the first parameter as the first operand and the 
+second parameter as the second operand.
 
+Example: basicCalculator(10, 5, 'subtract') should return 5.
+
+Complete the exercise in the space below:
+*/
+
+const basicCalculator2 = (p1, p2, action) => {
+    const lowerAction = action.toLowerCase();
+    return lowerAction === "subtract" ? p1 - p2 : 
+    lowerAction === "add" ? p1 + p2 :
+    lowerAction === "multiply" ? p1 * p2 :
+    lowerAction === "divide" ? p1 / p2 : undefined;
+};
+console.log('Exercise 9 Result:', basicCalculator2(10, 5, "subtract"));
+//why must need to have "undefined'? 
+
+/*
+Exercise 10: calculateGrade()
+
+Define a function called calculateGrade. 
+It should take a numerical score and return the corresponding letter 
+grade (A, B, C, D, F). 
+
+For example, 90 and above yields an 'A', 80-89 is a 'B', 
+and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+
+const calculateGrade = (score) => { 
+    if(score >= 90) {
+        return 'A';
+    } else if(score >=80) {
+        return 'B';
+    } else if (score >= 70) {
+        return 'C';
+    } else if (score>= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+} 
+console.log('Exercise 10 Result:', calculateGrade(89));
+
+/*
+Exercise 11: createUsername()
+
+Define a function called createUsername. 
+It should take a first name and a last name and return a username. 
+
+The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
+
+Complete the exercise in the space below:
+*/
+const createUsername = (firstName, lastName) => {
+     const userName = firstName.slice (0,3) + lastName.slice(0,3);
+     const result = userName + userName.length; 
+     return result;
+}
+console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
+
+/*
+Exercise 12: numArgs()
+
+Challenge yourself with numArgs. 
+This function should return the count of arguments passed to it when called.
+
+Complete the exercise in the space below:
+*/
+
+function numArgs() {
+    return arguments.length;
+}
+console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
 
 
